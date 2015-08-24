@@ -1,4 +1,4 @@
-package pl.lucek.pitstones;
+package pl.lucek.pitstones.game;
 
 public class Game {
 
