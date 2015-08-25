@@ -6,7 +6,6 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-import pl.lucek.pitstones.game.Game;
 import pl.lucek.pitstones.game.Game.Player;
 
 public class PitStonesTests {

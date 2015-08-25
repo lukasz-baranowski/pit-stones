@@ -1,8 +1,9 @@
 package pl.lucek.pitstones.game;
 
+
 public class Game {
 
-	enum Player {
+	public enum Player {
 		FIRST, SECOND;
 	}
 
@@ -71,6 +72,18 @@ public class Game {
 		} else {
 			return firstPlayerPits;
 		}
+	}
+
+	public int[] getFirstPlayerPits() {
+		return firstPlayerPits;
+	}
+
+	public int[] getSecondPlayerPits() {
+		return secondPlayerPits;
+	}
+
+	public Player getNextTurn() {
+		return nextTurn;
 	}
 
 }

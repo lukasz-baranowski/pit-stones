@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Pit stones game</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<style>
+	td { 
+	    padding: 15px;
+	}
+	table {
+    	border-color: black;
+    	text-align: center;
+	}
+</style>
+<body>
+    <p>Pit stones game</p>
+    
+    <table border="1">
+	    <tr>
+	    	<td colspan="7" align="right">Player 1</td>
+	    </tr>
+	    <tr>
+		    <th:block th:each="pit : ${firstPlayerPits}">
+		    	<td><p th:text="'Pit no: ' + ${pit.index}" /><p th:text="'Stones: ' + ${pit.value}" /></td>
+		    </th:block>
+	    </tr>
+	    <tr>
+	    	<th:block th:each="pit : ${secondPlayerPits}">
+		        <td><p th:text="'Pit no: ' + ${pit.index}" /><p th:text="'Stones: ' + ${pit.value}" /></td>
+	    	</th:block>
+	    </tr>
+	    <tr>
+	    	<td colspan="7" align="left">Player 2</td>
+	    </tr>
+    </table>
+    
+    <p th:text="'Player turn:  ' + ${nextTurn}" />
+    
+    <form action="#" th:action="@{/game}" th:object="${playerSow}" method="post">
+    	<p>Choose pit number (from 1 to 6): <input type="text" th:field="*{pitNumber}" /></p>
+        <p><input type="submit" name="submit" value="Submit" /></p>
+        <p><input type="submit" name="newGame" value="New Game" /></p>
+    </form>
+    
+</body>
+</html>
